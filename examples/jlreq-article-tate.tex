@@ -17,7 +17,7 @@
 \end{abstract}%
 }
 
-\jlreqabstract{二段組文書で通常の\textsf{概要}環境を使用すると，概要は一段中に収まる形で表示されます． 二段組み文書で，概要を二段にまたがって表示するには，この例のように\textsf{Abstract over Columns}環境を指定してください．
+\jlreqabstract{二段組文書で通常の\textsf{概要}環境を使用すると，概要は一段中に収まる形で表示されます． 二段組み文書で，概要を二段にまたがって表示するには，この例のように\textsf{Abstract over Columns}環境を指定してください（この文書は一段組になっていますので，どちらを使っても同じです）．
 この\textsf{Abstract over Columns}環境\sidenote{縦書き文書で概要を使うことはあまりないかもしれません．この文書は縦書きのみで使用可能な機能を例示するために，縦書きの設定にしてあります．}
 は，プリアンブル中にLaTeXコマンドの形で渡されますので，一定の制約があります．とくに改段落は \texttt{\textbackslash par}
 コマンドをTeXコードで渡す必要があります．このように＞\par{}また，プリアンブル中に宣言される変数等は\textsf{，Abstract over Columns}環境中では使用できないものがあります．使用できるかどうかは，プリアンブル中の宣言順序に依存します．宣言順序はLyXで指定することはできません（天に祈ってください）．なお，下記の側註は\texttt{sidenote\_type=symbol}が宣言される前にあるので，側註タイプが記号ではなく番号になっています\sidenote{この挙動をコントロールする必要があれば，この環境を使わず，プリアンブル中に直接コードを書いてください．}．}
@@ -46,24 +46,23 @@
 
 \section*{文書設定}[まずは足場作りから]
 
-JLReq文書クラスでは，同じ文書クラス指定で，article, report, bookクラス相当の出力を切り替えることができます．\menuitem{文書\lyxarrow 設定\lyxarrow 文書クラス\lyxarrow クラスオプション\lyxarrow 詳細設定}に「report」または「book」と指定すれば，reportまたはbookクラス相当となります．何も指定しなければ，articleクラス相当となります．
-
-文書内の各種設定は，オプションの種類によって
+JLReq文書クラスには，\menuitem{Japanese Article (JLReq Class)}・\menuitem{Japanese Book (JLReq Class)}・\menuitem{Japanese Report (JLReq Class)}の三つのクラスがあり，どれを選ぶかによって，article,
+book, reportクラス相当の出力を選択することができます．文書内の各種設定は，オプションの種類によって
 \begin{itemize}
-\item 上記のようにクラスオプションで渡すか（\menuitem{文書\lyxarrow 設定\lyxarrow 文書クラス\lyxarrow クラスオプション\lyxarrow 詳細設定}にコンマ区切りで指定）
+\item クラスオプションで渡すか（\menuitem{文書\lyxarrow 設定\lyxarrow 文書クラス\lyxarrow クラスオプション\lyxarrow 詳細設定}にコンマ区切りで指定）
 \item \menuitem{JLReq Setup}環境を使って渡すか
 \end{itemize}
 のいずれかで行います．文書レイアウト全体（基本版面）の設定は前者の方法，その他は後者の方法で行います（詳しくは付録参照）．
 
-\sidenote{下記の段落}{\menuitem{JLReq Setup}環境の設定は，\LyX 中においてのみ表示されます．出力中には表示されません．}では，jlreq文書クラスのグローバルな設定を行っています．この段落の内容は，\LaTeX ソース中において，プリアンブルに\commanditem{\textbackslash jlreqsetup\{...\}}の形で渡されます．これは文書中のどこにおかれても構いませんし，複数回文書中に登場しても構いません．下記の設定は，側註が連番ではなく，記号でマークされるように指定します．これによって，側註差込枠の挙動が変わります（引数を取るようになります）．この指定をしない場合には，側註差込枠は引数を取りません．また，\commanditem{JLReq Setup}環境を使わずに，\commanditem{\textbackslash jlreqsetup\{...\}}を使って，プリアンブル（\menuitem{文書\lyxarrow 設定\ldots\lyxarrow LaTeXプリアンブル}）に直接書いても同じです．
+\sidenote{下記の段落}{\menuitem{JLReq Setup}環境の設定は，\LyX 中においてのみ表示されます．出力中には表示されません．}では，jlreq文書クラスのグローバルな設定を行っています．この段落の内容は，\LaTeX ソース中において，プリアンブルに\commanditem{\textbackslash jlreqsetup\{...\}}の形で渡されます．これは文書中のどこにおかれても構いませんし，複数回文書中に登場しても構いません．下記の設定は，側註が連番ではなく，記号でマークされるように指定します．これによって，側註差込枠の挙動が変わります（引数を取るようになります）．この指定をしない場合には，側註差込枠は引数を取りません．また，\commanditem{JLReq Setup}環境を使わずに，\commanditem{\textbackslash jlreqsetup\{...\}}を使って，プリアンブル（\menuitem{文書\lyxarrow 設定\lyxarrow LaTeXプリアンブル}）に直接書いても同じです．
 
 \section*{jlreq文書に特有な特別差込枠}
 \begin{description}
 \item [{後註}] 後註とは，文書の章割りの最後\endnote{ここが本節の最後です．後註はここに出力されます．}に出力される註釈のことです．この文書では，後註の内容はこの節の最後に表示されます．
 \item [{側註}] 側註は\sidenote{余白}{側註はこの余白部分に出力されます．}部分に出力する註釈です．グローバルに定義されている傍註と同じ\commanditem{\textbackslash marginpar}を使用していますが，文書クラスの体裁に合わせてある，こちらの側註の方を使ってください．縦書き文書のときには脚註として機能します．
 \item [{脚註}] 脚註は横書き文書では用紙下部に出力されますが，縦書き文書ではページの一番左側に出力されます\footnote{縦書き文書での「脚註」の出力位置はここです．}．
-\item [{割註}] 割註とは，本文中に小文字で註釈を，かっこで括った複数行で入れるものです．\commanditem{}特別差込枠を使用した場合には，割註の長さは自動的に計算されます\warichu{自動的に計算されるとはこういうことです．ここでは長さは特段指定していません．}．一方，\commanditem{}を使用すると，区切りを手動で指定することができます．\commanditem{}の中身は，\LaTeX の表の書き方に準拠して書きます\warichu*{つまりはこういうことです．& 横方向の区切りはアンパサンド \\縦方向の区切りは & 二重バックスラッシュです．}．\commanditem{}には，差込枠の中身がそのまま\LaTeX に渡されるので，特殊文字は必要に応じてエスケープしてください．
-\item [{縦中横}] 縦中横とは，縦書きの中に\tatechuyoko*{このように}横書きを入れることです．\tatechuyoko*{\LyX}のように短い英文を入れるのにいいかもしれません．特別差込枠\commanditem{}は\LaTeX コマンド\commanditem{\textbackslash tatechuyoko{*}}を使用します．\LaTeX コマンド\commanditem{\textbackslash tatechuyoko}は，本レイアウトでは実装されていません．
+\item [{割註}] 割註とは，本文中に小文字で註釈を，かっこで括った複数行で入れるものです．\commanditem{Warichu}特別差込枠を使用した場合には，割註の長さは自動的に計算されます\warichu{自動的に計算されるとはこういうことです．ここでは長さは特段指定していません．}．一方，\commanditem{Warichu{*}}を使用すると，区切りを手動で指定することができます．\commanditem{Warichu{*}}の中身は，\LaTeX の表の書き方に準拠して書きます\warichu*{つまりはこういうことです．& 横方向の区切りはアンパサンド \\縦方向の区切りは & 二重バックスラッシュです．}．\commanditem{Warichu{*}}には，差込枠の中身がそのまま\LaTeX に渡されるので，特殊文字は必要に応じてエスケープしてください．
+\item [{縦中横}] 縦中横とは，縦書きの中に\tatechuyoko*{このように}横書きを入れることです．\tatechuyoko*{\LyX}のように短い英文を入れるのにいいかもしれません．特別差込枠\commanditem{Tatechuyoko}は\LaTeX コマンド\commanditem{\textbackslash tatechuyoko{*}}を使用します．\LaTeX コマンド\commanditem{\textbackslash tatechuyoko}は，本レイアウトでは実装されていません．
 \item [{字取り}] これが「\jidori{2cm}{字取り}」の例です．2cmの長さに文字を当てはめています．
 \item [{空き組}] 空き組は，「\akigumi{2mm}{このようにして}」入れます．ここでは，文字間に2mmの空きが入っています．これはLua\LaTeX でしか動作しません．
 \end{description}
@@ -80,13 +79,13 @@ JLReq文書クラスでは，同じ文書クラス指定で，article, report, b
 
 \subsection*{クラスオプションで渡すオプション}
 
-ここに列挙されたオプションは，\menuitem{文書\lyxarrow 設定\ldots\lyxarrow 文書クラス\lyxarrow クラスオプション\lyxarrow 詳細設定}にコンマ区切りで記入して指定します．
+ここに列挙されたオプションは，\menuitem{文書\lyxarrow 設定\lyxarrow 文書クラス\lyxarrow クラスオプション\lyxarrow 詳細設定}にコンマ区切りで記入して指定します．
 
 \subsubsection*{標準的オプション}
 \begin{itemize}
-\item oneside / twoside / onecolumn / twocolumn / titlepage / notitlepage
-/ draft / final / landscape / openright / openany / leqno / fleqn
-\item \commanditem{disablejfam}：和文フォントを数式用に登録しません.
+\item \menuitem{oneside / twoside / onecolumn / twocolumn / titlepage / notitlepage
+/ draft / final / landscape / openright / openany / leqno / fleqn}
+\item \commanditem{disablejfam}：和文フォントを数式用に登録しません．
 \end{itemize}
 
 \subsubsection*{基本版面に関するもの}
