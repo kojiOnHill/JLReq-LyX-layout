@@ -10,7 +10,7 @@ This is a LyX layout file for the *jlreq* LaTeX document class. LyX is a documen
 4. Choose menu **Tools -> Reconfigure**
 
 The place of LYXDIR depends on OS's. Most likely places are:
-- `/usr/local/share/lyx` or `/usr/share/lyx` on UN\*X like systems,
+- `/usr/local/share/lyx` or `/usr/share/lyx` on UN\*X-like systems including Linux,
 - `C:\Program Files\LyX` on Windows, 
 - `/Applications/LyX/Contents/Resources` on MacOS.
 
