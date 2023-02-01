@@ -1,6 +1,6 @@
 %% LyX 2.4.0-beta3-devel created this file.  For more info, see https://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[japanese,tate, b5paper, sidenote_length=2cm]{jlreq}
+\documentclass[japanese,tate, b5paper, sidenote_length=30mm]{jlreq}
 \usepackage{babel}
 \usepackage[pdfusetitle,
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
@@ -18,9 +18,8 @@
 }
 
 \jlreqabstract{二段組文書で通常の\textsf{ 概要} 環境を使用すると，概要は一段中に収まる形で表示されます． 二段組み文書で，概要を二段にまたがって表示するには，この例のように\textsf{Abstract over Columns}環境を指定してください（この文書は一段組になっていますので，どちらを使っても同じです）．
-この\textsf{Abstract over Columns}環境\sidenote{縦書き文書で概要を使うことはあまりないかもしれません．この文書は縦書きのみで使用可能な機能を例示するために，縦書きの設定にしてあります．}
-は，プリアンブル中にLaTeXコマンドの形で渡されますので，一定の制約があります．とくに改段落は \texttt{\textbackslash par}
-コマンドをTeXコードで渡す必要があります．このように$\longrightarrow$\par{}また，プリアンブル中に宣言される変数等は\textsf{，Abstract over Columns}環境中では使用できないものがあります．使用できるかどうかは，プリアンブル中の宣言順序に依存します．宣言順序はLyXで指定することはできません（天に祈ってください）．なお，下記の側註は\texttt{sidenote\_type=symbol}が宣言される前にあるので，側註タイプが記号ではなく番号になっています\sidenote{この挙動をコントロールする必要があれば，この環境を使わず，プリアンブル中に直接コードを書いてください．}．}
+この\textsf{Abstract over Columns}環境\sidenote{縦書き文書で概要を使うことはあまりないかもしれません．この文書は縦書きのみで使用可能な機能を例示するために，縦書きの設定にしてあります．}の中身は，LyXの制限にしたがってLaTeXコマンドとしてプリアンブルに渡されますので，一定の制約を受けます．とくに改段落は
+\texttt{\textbackslash par} コマンドをTeXコードで渡す必要があります．このように$\longrightarrow$\par{}また，プリアンブル中に宣言される変数等は\textsf{，Abstract over Columns}環境中では使用できないものがあります．使用できるかどうかは，プリアンブル中の宣言順序に依存します．宣言順序はLyXで指定することはできません（天に祈ってください）．なお，下記の側註は\texttt{sidenote\_type=symbol}が宣言される前にあるので，側註タイプが記号ではなく番号になっています\sidenote{この挙動をコントロールする必要があれば，この環境を使わず，プリアンブル中に直接コードを書いてください．}．この後に出てくる本文中では，宣言後ですので，記号になっていることに注意してください．}
 
 \jlreqsetup{sidenote_type=symbol}
 
@@ -52,9 +51,9 @@ book, reportクラス相当の出力を選択することができます．文�
 \item クラスオプションで渡すか（\menuitem{文書\lyxarrow 設定\lyxarrow 文書クラス\lyxarrow クラスオプション\lyxarrow 詳細設定}にコンマ区切りで指定）
 \item \menuitem{JLReq Setup}環境を使って渡すか
 \end{itemize}
-のいずれかで行います．文書レイアウト全体（基本版面）の設定は前者の方法，その他は後者の方法で行います（詳しくは付録参照）．
+のいずれかで行います．標準的なオプションと文書レイアウト全体（基本版面）の設定は前者の方法，その他は後者の方法で行います（詳しくは付録参照）．
 
-\sidenote{下記の段落}{\menuitem{JLReq Setup}環境の設定は，\LyX 中においてのみ表示されます．出力中には表示されません．}では，jlreq文書クラスのグローバルな設定を行っています．この段落の内容は，\LaTeX ソース中において，プリアンブルに\commanditem{\textbackslash jlreqsetup\{...\}}の形で渡されます．これは文書中のどこにおかれても構いませんし，複数回文書中に登場しても構いません．下記の設定は，側註が連番ではなく，記号でマークされるように指定します．これによって，側註差込枠の挙動が変わります（引数を取るようになります）．この指定をしない場合には，側註差込枠は引数を取りません．また，\commanditem{JLReq Setup}環境を使わずに，\commanditem{\textbackslash jlreqsetup\{...\}}を使って，プリアンブル（\menuitem{文書\lyxarrow 設定\lyxarrow LaTeXプリアンブル}）に直接書いても同じです．
+\sidenote{下記の段落}{\menuitem{JLReq Setup}環境の設定は，\LyX 中においてのみ表示されます．出力中には表示されません．なお，側註はクラスオプションで\commanditem{sidenote\_length=xx}を正の値に指定しなくては動作しません．}では，jlreq文書クラスのグローバルな設定を行っています．この段落の内容は，\LaTeX ソース中において，プリアンブルに\commanditem{\textbackslash jlreqsetup\{...\}}の形で渡されます．これは文書中のどこにおかれても構いませんし，複数回文書中に登場しても構いません．下記の設定は，側註が連番ではなく，記号でマークされるように指定します．これによって，側註差込枠の挙動が変わります（引数を取るようになります）．この指定をしない場合には，側註差込枠は引数を取りません．また，\commanditem{JLReq Setup}環境を使わずに，\commanditem{\textbackslash jlreqsetup\{...\}}を使って，プリアンブル（\menuitem{文書\lyxarrow 設定\lyxarrow LaTeXプリアンブル}）に直接書いても同じです．
 
 \section*{jlreq文書に特有な特別差込枠}
 \begin{description}
@@ -144,7 +143,8 @@ B列です．JIS B列を指定する場合は，\commanditem{b0j}から\commandi
 \item \commanditem{caption\_font=<フォント設定コード>}：キャプション自身のフォントを指定します．
 \item \commanditem{caption\_label\_font=<フォント設定コード>}：キャプションのラベルのフォントを指定します．
 \item \commanditem{caption\_after\_label\_space=<寸法>}：ラベルとキャプションの間の空きを指定します．
-\item \commanditem{caption\_label\_format=<コード>}：ラベルの書式を指定します．\commanditem{caption\_label\_format=\{\#1：\}}のようにします．\#1が「図1」のような番号に置換されます．
+\item \commanditem{caption\_label\_format=<コード>}：ラベルの書式を指定します．\\
+\commanditem{caption\_label\_format=\{\#1：\}}のようにします．\commanditem{\#1}が「図1」のような番号に置換されます．
 \item \commanditem{caption\_align={[}left/right/center/bottom/top{]}}：キャプションの場所を指定します．\commanditem{\{center,{*}left\}}のようにすると，通常は中央配置だがキャプションが大きいときには左に配置されます．
 \end{itemize}
 
@@ -152,7 +152,8 @@ B列です．JIS B列を指定する場合は，\commanditem{b0j}から\commandi
 \begin{itemize}
 \item \commanditem{quote\_indent=<寸法>}：字下げを指定します．デフォルトは\commanditem{2\textbackslash zw}です．一行の長さが文字サイズの整数倍になるように調整されます．
 \item \commanditem{quote\_end\_indent=<寸法>}：字上げを指定します．デフォルトは\commanditem{0\textbackslash zw}です．
-\item \commanditem{quote\_beforeafter\_space=<寸法>}：前後の空きを指定します．\commanditem{quote\_beforeafter\_space=1\textbackslash baselineskip}とすると一行あきます．
+\item \commanditem{quote\_beforeafter\_space=<寸法>}：前後の空きを指定します．\\
+\commanditem{quote\_beforeafter\_space=1\textbackslash baselineskip}とすると一行あきます．
 \item \commanditem{quote\_fontsize={[}normalsize/small/footnotesize/scriptsize/tiny{]}}：フォントサイズを指定します．
 \end{itemize}
 
@@ -174,7 +175,8 @@ B列です．JIS B列を指定する場合は，\commanditem{b0j}から\commandi
 以下の各オプションは，\commanditem{frontmatter\_}部分を\commanditem{mainmatter\_}／\commanditem{backmatter\_}／\commanditem{appendix\_}に変えることによって，本文部分／後付け／付録に関する設定に変えることができます．
 \begin{itemize}
 \item \commanditem{frontmatter\_pagebreak={[}cleardoublepage/clearpage/{]}}：\commanditem{\textbackslash frontmatter}実行時の改ページを実行する命令名を指定します．空にすると何もしません．
-\item \commanditem{frontmatter\_counter=\{<カウンタ名>=\{value=<値>, the=<コード>, restore={[}true/false{]}\},...\}}：\commanditem{\textbackslash frontmatter}時でのカウンタの操作を指定します．例えば\commanditem{chapter=\{value=0,the=\{{[}\textbackslash arabic\{chapter{]}\}\}}とすると，\commanditem{chapter}カウンタの値が0になり，\commanditem{\textbackslash thechapter}が\commanditem{{[}\textbackslash arabic\{chapter\}{]}}となります．デフォルトでは\commanditem{\textbackslash mainmatter}時に値と\commanditem{\textbackslash the<カウンタ名>}の定義を戻しますが，\commanditem{restore=false}とするとこの動きが抑制されます．
+\item \commanditem{frontmatter\_counter=\{<カウンタ名>=\{value=<値>, the=<コード>,}\\
+\commanditem{restore={[}true/false{]}\},...\}}：\commanditem{\textbackslash frontmatter}時でのカウンタの操作を指定します．例えば\commanditem{chapter=\{value=0,the=\{{[}\textbackslash arabic\{chapter{]}\}\}}とすると，\commanditem{chapter}カウンタの値が0になり，\commanditem{\textbackslash thechapter}が\commanditem{{[}\textbackslash arabic\{chapter\}{]}}となります．デフォルトでは\commanditem{\textbackslash mainmatter}時に値と\commanditem{\textbackslash the<カウンタ名>}の定義を戻しますが，\commanditem{restore=false}とするとこの動きが抑制されます．
 \item \commanditem{frontmatter\_heading=\{<見出し命令名>=\{<設定>\},...\}}：見出し命令の動きを変更します．\commanditem{\textbackslash Delare{*}{*}{*}Heading}で指定できる項目の他以下を受け付けます．
 \item \commanditem{heading\_type={[}Tobira/Block/Runin/Cutin/Modify{]}}：見出しの種類です．\commanditem{Modify}が指定された場合は\commanditem{\textbackslash ModifyHeading}での変更となります．
 \item \commanditem{heading\_level=<数値>}：見出し命令のレベルを設定します．指定されなかった場合は，\commanditem{\textbackslash frontmatter}実行時の値が使われます．\commanditem{heading\_type=Modify}の時は無視されます．

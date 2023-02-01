@@ -5,7 +5,7 @@
 \save_transient_properties true
 \origin unavailable
 \textclass ../../../コンピューター/LyX開発/layouts/jlreq-article
-\options tate, b5paper, sidenote_length=2cm
+\options tate, b5paper, sidenote_length=30mm
 \use_default_options true
 \maintain_unincluded_children false
 \begin_local_layout
@@ -261,9 +261,9 @@ status collapsed
 
 \end_inset
 
- は，
-プリアンブル中にLaTeXコマンドの形で渡されますので，
-一定の制約があります．とくに改段落は 
+の中身は，
+LyXの制限にしたがってLaTeXコマンドとしてプリアンブルに渡されますので，
+一定の制約を受けます．とくに改段落は 
 \family typewriter
 
 \backslash
@@ -334,7 +334,9 @@ status open
 
 \end_inset
 
-．
+．この後に出てくる本文中では，
+宣言後ですので，
+記号になっていることに注意してください．
 \end_layout
 
 \begin_layout Section*
@@ -524,7 +526,7 @@ p
 \end_layout
 
 \begin_layout Standard
-のいずれかで行います．文書レイアウト全体（基本版面）の設定は前者の方法，
+のいずれかで行います．標準的なオプションと文書レイアウト全体（基本版面）の設定は前者の方法，
 その他は後者の方法で行います（詳しくは付録参照）．
 \end_layout
 
@@ -561,7 +563,18 @@ p
 
 環境の設定は，
 \SpecialChar LyX
-中においてのみ表示されます．出力中には表示されません．
+中においてのみ表示されます．出力中には表示されません．なお，
+側註はクラスオプションで
+\begin_inset Flex CommandItem
+status collapsed
+
+\begin_layout Plain Layout
+sidenote_length=xx
+\end_layout
+
+\end_inset
+
+を正の値に指定しなくては動作しません．
 \end_layout
 
 \end_inset
@@ -645,6 +658,7 @@ LaTeXプリアンブル
 \end_layout
 
 \begin_layout JLReq Setup
+
 sidenote_type=symbol
 \end_layout
 
@@ -1945,6 +1959,10 @@ caption_label_format=<コード>
 
 ：
 ラベルの書式を指定します．
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Flex CommandItem
 status collapsed
 
@@ -1955,7 +1973,17 @@ caption_label_format={#1：
 
 \end_inset
 
-のようにします．#1が「図1」のような番号に置換されます．
+のようにします．
+\begin_inset Flex CommandItem
+status collapsed
+
+\begin_layout Plain Layout
+#1
+\end_layout
+
+\end_inset
+
+が「図1」のような番号に置換されます．
 \end_layout
 
 \begin_layout Itemize
@@ -2051,6 +2079,10 @@ quote_beforeafter_space=<寸法>
 
 ：
 前後の空きを指定します．
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Flex CommandItem
 status collapsed
 
@@ -2293,7 +2325,20 @@ status collapsed
 \begin_layout Plain Layout
 frontmatter_counter={<カウンタ名>={value=<値>,
  the=<コード>,
- restore=[true/false]},...}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex CommandItem
+status open
+
+\begin_layout Plain Layout
+restore=[true/false]},...}
 \end_layout
 
 \end_inset
