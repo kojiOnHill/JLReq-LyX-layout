@@ -17,10 +17,10 @@
 \end{abstract}%
 }
 
-\jlreqabstract{二段組文書で通常の\textsf{概要}環境を使用すると，概要は一段中に収まる形で表示されます． 二段組み文書で，概要を二段にまたがって表示するには，この例のように\textsf{Abstract over Columns}環境を指定してください（この文書は一段組になっていますので，どちらを使っても同じです）．
+\jlreqabstract{二段組文書で通常の\textsf{ 概要} 環境を使用すると，概要は一段中に収まる形で表示されます． 二段組み文書で，概要を二段にまたがって表示するには，この例のように\textsf{Abstract over Columns}環境を指定してください（この文書は一段組になっていますので，どちらを使っても同じです）．
 この\textsf{Abstract over Columns}環境\sidenote{縦書き文書で概要を使うことはあまりないかもしれません．この文書は縦書きのみで使用可能な機能を例示するために，縦書きの設定にしてあります．}
 は，プリアンブル中にLaTeXコマンドの形で渡されますので，一定の制約があります．とくに改段落は \texttt{\textbackslash par}
-コマンドをTeXコードで渡す必要があります．このように＞\par{}また，プリアンブル中に宣言される変数等は\textsf{，Abstract over Columns}環境中では使用できないものがあります．使用できるかどうかは，プリアンブル中の宣言順序に依存します．宣言順序はLyXで指定することはできません（天に祈ってください）．なお，下記の側註は\texttt{sidenote\_type=symbol}が宣言される前にあるので，側註タイプが記号ではなく番号になっています\sidenote{この挙動をコントロールする必要があれば，この環境を使わず，プリアンブル中に直接コードを書いてください．}．}
+コマンドをTeXコードで渡す必要があります．このように$\longrightarrow$\par{}また，プリアンブル中に宣言される変数等は\textsf{，Abstract over Columns}環境中では使用できないものがあります．使用できるかどうかは，プリアンブル中の宣言順序に依存します．宣言順序はLyXで指定することはできません（天に祈ってください）．なお，下記の側註は\texttt{sidenote\_type=symbol}が宣言される前にあるので，側註タイプが記号ではなく番号になっています\sidenote{この挙動をコントロールする必要があれば，この環境を使わず，プリアンブル中に直接コードを書いてください．}．}
 
 \jlreqsetup{sidenote_type=symbol}
 
@@ -124,9 +124,9 @@ B列です．JIS B列を指定する場合は，\commanditem{b0j}から\commandi
 \item \commanditem{use\_reverse\_pagination}：逆ノンブルの機能を利用可能にします．\commanditem{jlreqreversepage}という「読み取り専用のカウンタ」が定義されます．（本物のカウンタではありません．）\commanditem{\textbackslash arabic}などの命令や\commanditem{\textbackslash value}が適用可能です．また\commanditem{\textbackslash thejlreqreversepage}が\commanditem{\textbackslash arabic\{jlreqreversepage\}}として定義されます．
 \end{itemize}
 
-\subsection*{\protect\commanditem{}環境で設定するオプション}
+\subsection*{\protect\commanditem{JLREQ Setup}環境で設定するオプション}
 
-ここに列挙されたオプションは，\menuitem{}環境に直に書き込んで指定します．複数の指定を同一行に書き込む場合には，カンマで区切ります．\menuitem{}環境では，書き込んだ内容がそのまま\LaTeX に渡されるので，\LaTeX において特別な意味を持つ文字を使用する際にはエスケープしてください．
+ここに列挙されたオプションは，\menuitem{JLReq Setup}環境に直に書き込んで指定します．複数の指定を同一行に書き込む場合には，カンマで区切ります．\menuitem{JLReq Setup}環境では，書き込んだ内容がそのまま\LaTeX に渡されるので，\LaTeX において特別な意味を持つ文字を使用する際にはエスケープしてください．
 
 \subsubsection*{註に関するもの}
 \begin{itemize}

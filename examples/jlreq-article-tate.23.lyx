@@ -180,9 +180,19 @@ status collapsed
 \begin_layout Abstract over Columns
 二段組文書で通常の
 \family sans
-概要
+ 
+A
+b
+s
+t
+r
+a
+c
+t
+
+
 \family default
-環境を使用すると，
+ 環境を使用すると，
 概要は一段中に収まる形で表示されます． 二段組み文書で，
 概要を二段にまたがって表示するには，
 この例のように
@@ -259,7 +269,11 @@ status collapsed
 \backslash
 par
 \family default
- コマンドをTeXコードで渡す必要があります．このように＞
+ コマンドをTeXコードで渡す必要があります．このように
+\begin_inset Formula $\longrightarrow$
+\end_inset
+
+
 \begin_inset ERT
 status collapsed
 
@@ -631,7 +645,6 @@ LaTeXプリアンブル
 \end_layout
 
 \begin_layout JLReq Setup
-
 sidenote_type=symbol
 \end_layout
 
