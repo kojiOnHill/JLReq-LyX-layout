@@ -1,4 +1,4 @@
-# LyX layouts for the LaTeX JLReq document class
+# LyX layouts for the jlreq LaTeX document class
 
 This is LyX layout files for the *jlreq* LaTeX document class. LyX is a document processor available at https://www.lyx.org/. *jlreq* is a LaTeX document class which implements the standard of *Requirements for Japanese Text Layout* set by W3C and available at https://github.com/abenori/jlreq.
 
