@@ -322,21 +322,79 @@ s
 sidenote_type=symbol
 \family default
 が宣言される前にあるので，
-側註タイプが記号ではなく番号になっています
-\begin_inset Flex Sidenote
-status open
+側註タイプが記号ではなく番号になっています．この後に出てくる本文中では，
+宣言後ですので，
+記号になっていることに注意してください．
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
-この挙動をコントロールする必要があれば，
-この環境を使わず，
-プリアンブル中に直接コードを書いてください．
+
+
+\backslash
+par{}
 \end_layout
 
 \end_inset
 
-．この後に出てくる本文中では，
-宣言後ですので，
-記号になっていることに注意してください．
+プリアンブルの他の設定に依存する
+\family sans
+
+A
+b
+s
+t
+r
+a
+c
+t
+ 
+o
+v
+e
+r
+ 
+C
+o
+l
+u
+m
+n
+s
+
+
+\family default
+環境が必要で，
+さらにその挙動を正確にコントロールする必要があれば，
+
+\family sans
+
+A
+b
+s
+t
+r
+a
+c
+t
+ 
+o
+v
+e
+r
+ 
+C
+o
+l
+u
+m
+n
+s
+
+
+\family default
+環境を使わず，
+プリアンブル中に直接コードを書いてください．
 \end_layout
 
 \begin_layout Section*
@@ -535,11 +593,14 @@ p
 status open
 
 \begin_layout Plain Layout
-下記の段落
+左記の段落
 \begin_inset Argument post:1
 status open
 
 \begin_layout Plain Layout
+\SpecialChar LyX
+ソース中においては，
+この段落の次に
 \begin_inset Flex MenuItem
 status collapsed
 
@@ -561,20 +622,8 @@ p
 
 \end_inset
 
-環境の設定は，
-\SpecialChar LyX
-中においてのみ表示されます．出力中には表示されません．なお，
-側註はクラスオプションで
-\begin_inset Flex CommandItem
-status collapsed
-
-\begin_layout Plain Layout
-sidenote_length=xx
-\end_layout
-
-\end_inset
-
-を正の値に指定しなくては動作しません．
+環境の設定段落がありますが，
+出力中には表示されません．
 \end_layout
 
 \end_inset
@@ -693,7 +742,18 @@ status open
 status open
 
 \begin_layout Plain Layout
-側註はこの余白部分に出力されます．
+側註はこの余白部分に出力されます．なお，
+側註はクラスオプションで
+\begin_inset Flex CommandItem
+status collapsed
+
+\begin_layout Plain Layout
+sidenote_length=xx
+\end_layout
+
+\end_inset
+
+を正の値に指定しなくては動作しません．
 \end_layout
 
 \end_inset
