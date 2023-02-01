@@ -15,4 +15,4 @@ The place of LYXDIR depends on OS's. Most likely places are:
 - `/Applications/LyX/Contents/Resources` on MacOS.
 
 ## Documentation
-Look at one of example files available in the **examples** directory and the documentation of the *jlreq* LaTeX class. Note that the lyx file in the examples directory is only readable with LyX versions greater than LyX-2.4.0-beta3.
+Look at one of example files available in the **examples** directory and also the documentation of the *jlreq* LaTeX class itself. Note that the lyx file in the examples directory is only readable with LyX versions greater than LyX-2.4.0-beta3.
