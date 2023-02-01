@@ -1,0 +1,38 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[jlreq,l3keys2e.sty,lmodern.sty]{Japanese Article (JLReq Class)}
+#  \DeclareCategory{Articles}
+# Japanese JLReq article textclass definition file.
+# Author : Koji Yokota (yokota6@gmail.com)
+#
+# This class internally loads following packages:
+# Any time:			 	l3keys2e, lmodern
+# With non-LuaLaTeX:	everyhook
+# With LuaLaTeX:		luatexja, luatexja-adjust
+
+Format 99
+
+# Input general definitions
+Input article.layout
+
+# Input common settings for jlreq layouts
+Input jlreq-common.inc
+
+Style Abstract_over_Columns
+	CopyStyle			Abstract
+	InPreamble			1
+	LabelString			"Abstract over Columns (use \par for a new paragraph)"
+	Category			FrontMatter
+	LatexType			Command
+	LatexName			jlreqabstract
+	Preamble
+		\newcommand{\jlreqabstract}[1]{%
+		\begin{abstract}%
+		#1%
+		\end{abstract}%
+		}
+	EndPreamble
+End
+
+NoStyle Chapter
+NoCounter chapter
+NoStyle Chapter*
