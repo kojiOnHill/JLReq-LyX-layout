@@ -5,6 +5,8 @@ These layout files provide document processor [LyX](https://www.lyx.org/) with t
 *jlreq* is a LaTeX document class which implements the standard of *Requirements for Japanese Text Layout* set by W3C and available at https://github.com/abenori/jlreq.
 
 ## Install
+
+### Installing to the system directory
 1. Copy files in the **layouts** directory to `LYXDIR/layouts/`
 2. Copy files in the **examples** directory to `LYXDIR/examples/Articles/`
 3. Run LyX
@@ -14,6 +16,13 @@ The place of LYXDIR depends on OS's. Most likely places are:
 - `/usr/local/share/lyx` or `/usr/share/lyx` on UN\*X-like systems including Linux,
 - `C:\Program Files\LyX` on Windows, 
 - `/Applications/LyX/Contents/Resources` on MacOS.
+
+You will need to acquire writing permission on these directories.
+
+### Installing to a user directory
+Alternatively,
+1. you can copy files in the **layouts** directory to an arbitrary place as you like and
+2. specify them from "Local Class" at Document -> Setting -> Document Class.
 
 ## Documentation
 Look at one of example files available in the **examples** directory ([PDF output](examples/jlreq-article-tate.pdf): see lyx file for its composition), and also the documentation of the *jlreq* LaTeX class itself. Note that the lyx file in the examples directory is readable with LyX versions greater than LyX-2.3.x.
