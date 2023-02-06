@@ -27,5 +27,5 @@ Alternatively,
 ## Documentation
 Look at one of example files available in the **examples** directory ([PDF output](examples/jlreq-article-tate.pdf): see lyx file for its composition), and also the documentation of the *jlreq* LaTeX class itself. Note that the lyx file in the examples directory is readable with LyX versions greater than LyX-2.3.x.
 
-## To Do
-Output to XHTML and DocBook is not implemented yet.
+## History
+Feb. 7, 2023.  Support for XHTML and DocBook is added.
