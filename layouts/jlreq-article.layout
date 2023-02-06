@@ -17,22 +17,6 @@ Input article.layout
 # Input common settings for jlreq layouts
 Input jlreq-common.inc
 
-Style Abstract_over_Columns
-	CopyStyle			Abstract
-	InPreamble			1
-	LabelString			"Abstract over Columns (use \par for a new paragraph)"
-	Category			FrontMatter
-	LatexType			Command
-	LatexName			jlreqabstract
-	Preamble
-		\newcommand{\jlreqabstract}[1]{%
-		\begin{abstract}%
-		#1%
-		\end{abstract}%
-		}
-	EndPreamble
-End
-
 NoStyle Chapter
 NoCounter chapter
 NoStyle Chapter*

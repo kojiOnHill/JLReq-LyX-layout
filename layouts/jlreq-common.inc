@@ -88,6 +88,22 @@ Style Subsubsection*
 	EndArgument
 End
 
+Style Abstract_over_Columns
+	CopyStyle			Abstract
+	InPreamble			1
+	LabelString			"Abstract"
+	Category			FrontMatter
+	LatexType			Command
+	LatexName			jlreqabstract
+	Preamble
+		\newcommand{\jlreqabstract}[1]{%
+		\begin{abstract}%
+		#1%
+		\end{abstract}%
+		}
+	EndPreamble
+End
+
 Style JLReq_Setup
 	InPreamble			1
 	LatexType			Command
@@ -107,26 +123,79 @@ Style JLReq_Setup
 	EndFont
 	ParagraphGroup		1
 	PassThru			1
+	HTMLTag				!--
 End
 
 InsetLayout Flex:Endnote
-	LyxType		custom
-	LatexType	Command
-	LatexName	endnote
-	MultiPar	0
-	CustomPars	0
-	Decoration	Classic
-	LabelString	"Endnote"
-	ForcePlain	1
-	BgColor		background
+	LyxType				custom
+	LatexType			Command
+	LatexName			endnote
+	Counter				footnote
+	Decoration			Classic
+	LabelString			"Endnote"
+	ForcePlain			1
+	BgColor				background
 	ResetsFont true
+	HTMLLabel			\arabic{footnote}
+	HTMLInnerTag        div
+	HTMLStyle
+		span.flex_endnote_label {
+			vertical-align: super;
+			font-size: smaller;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		div.flex_endnote {
+			display: inline;
+			font-size: small;
+			font-weight: normal;
+			font-family: serif;
+			font-variant: normal;
+			font-style: normal;
+		}
+		div.flex_endnote_inner { display: none; }
+		div.flex_endnote:hover div.flex_endnote_inner {
+			display: block;
+			border: 1px double black;
+			margin: 0em 1em;
+			padding: 1em;
+		}
+	EndHTMLStyle
+	AddToToc              footnote
+	IsTocCaption          true
+	DocBookTag            footnote
+	DocBookTagType        inline
 End
 
 InsetLayout Flex:Sidenote
-	CopyStyle	Flex:Endnote
-	LatexName	sidenote
-	LabelString	"Sidenote"
-	NoInsetLayout	Marginal
+	CopyStyle			Flex:Endnote
+	LatexName			sidenote
+	LabelString			"Sidenote"
+	HTMLLabel			\arabic{footnote}
+	HTMLInnerTag        div
+	HTMLStyle
+		span.flex_sidenote_label {
+			vertical-align: super;
+			font-size: smaller;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		div.flex_sidenote {
+			display: inline;
+			font-size: small;
+			font-weight: normal;
+			font-family: serif;
+			font-variant: normal;
+			font-style: normal;
+		}
+		div.flex_sidenote_inner { display: none; }
+		div.flex_sidenote:hover div.flex_sidenote_inner {
+			display: block;
+			border: 1px double black;
+			margin: 0em 1em;
+			padding: 1em;
+		}
+	EndHTMLStyle
 	Argument post:1
 		LabelString		"Note"
 		MenuString		"Endnote contents"
@@ -138,48 +207,104 @@ InsetLayout Flex:Sidenote
 End
 
 InsetLayout Flex:Warichu
-	CopyStyle	Flex:Endnote
-	LatexName	warichu
-	LabelString	"Warichu"
+	CopyStyle			Flex:Endnote
+	LatexName			warichu
+	LabelString			"Warichu"
+	HTMLLabel			\arabic{footnote}
+	HTMLInnerTag        div
+	HTMLStyle
+		span.flex_warichu_label {
+			vertical-align: super;
+			font-size: smaller;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		div.flex_warichu {
+			display: inline;
+			font-size: small;
+			font-weight: normal;
+			font-family: serif;
+			font-variant: normal;
+			font-style: normal;
+		}
+		div.flex_warichu_inner { display: none; }
+		div.flex_warichu:hover div.flex_warichu_inner {
+			display: block;
+			border: 1px double black;
+			margin: 0em 1em;
+			padding: 1em;
+		}
+	EndHTMLStyle
 End
 
 InsetLayout Flex:Warichu*
-	CopyStyle		Flex:Endnote
-	LatexName		warichu*
-	LabelString		"Warichu*"
-	PassThru		1
-	MultiPar		1
-	ParbreakIgnored	1
+	CopyStyle			Flex:Warichu
+	LatexName			warichu*
+	LabelString			"Warichu*"
+	PassThru			1
+	MultiPar			1
+	ParbreakIgnored		1
 	TextFont
-		Family		Typewriter
+		Family			Typewriter
 	EndFont
+	HTMLLabel			\arabic{footnote}
+	HTMLInnerTag        div
+	HTMLStyle
+		span.flex_warichu__label {
+			vertical-align: super;
+			font-size: smaller;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		div.flex_warichu_ {
+			display: inline;
+			font-size: small;
+			font-weight: normal;
+			font-family: serif;
+			font-variant: normal;
+			font-style: normal;
+		}
+		div.flex_warichu__inner { display: none; }
+		div.flex_warichu_:hover div.flex_warichu__inner {
+			display: block;
+			border: 1px double black;
+			margin: 0em 1em;
+			padding: 1em;
+		}
+	EndHTMLStyle
 End
 
 InsetLayout Flex:Tatechuyoko
-	CopyStyle	Flex:Endnote
-	LatexName	tatechuyoko*
-	LabelString	"Tatechuyoko"
+	LatexType			Command
+	LyxType				charstyle
+	LatexName			tatechuyoko*
+	LabelString			"Tatechuyoko"
+	Decoration			Conglomerate
 End
 
 InsetLayout Flex:Jidori
-	CopyStyle	Flex:Endnote
-	LatexName	jidori
-	LabelString	"Jidori"
+	CopyStyle			Flex:Tatechuyoko
+	LatexName			jidori
+	LabelString			"Jidori"
 	Argument 1
 		LabelString		"Length"
-		MenuString		"Jidori Length"
+		MenuString		"Jidori Length|L"
 		Tooltip			"Length of Jidori. Contents is fit to this length."
 		Mandatory		1
+		AutoInsert		1
 	EndArgument
 End
 
 InsetLayout Flex:Akigumi
-	CopyStyle	Flex:Jidori
-	LatexName	akigumi
-	LabelString	"Akigumi"
-	MenuString	"Akigumi (LuaLaTeX)"
+	CopyStyle			Flex:Tatechuyoko
+	LatexName			akigumi
+	LabelString			"Akigumi"
+	MenuString			"Akigumi (LuaLaTeX)"
 	Argument 1
-		MenuString		"Akigumi Length"
-		Tooltip			"Length between chars are set to this length."
+		LabelString		"Char Space"
+		MenuString		"Char Space|D"
+		Tooltip			"Distance between chars is set to this length."
+		Mandatory		1
+		AutoInsert		1
 	EndArgument
 End
