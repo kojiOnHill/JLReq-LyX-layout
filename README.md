@@ -2,13 +2,13 @@
 
 These layout files provide document processor [LyX](https://www.lyx.org/) with the ability to create documents based on *jlreq* LaTeX document class.
 
-*jlreq* is a LaTeX document class which implements the standard of *Requirements for Japanese Text Layout* set by W3C and available at https://github.com/abenori/jlreq.
+*jlreq* is a LaTeX document class which implements the standard of *Requirements for Japanese Text Layout* set by W3C and available at [https://github.com/abenori/jlreq](https://github.com/abenori/jlreq).
 
 ## Install
 
 ### Installing to the system directory
-1. Copy files in the **layouts** directory to `LYXDIR/layouts/`
-2. Copy files in the **examples** directory to `LYXDIR/examples/Articles/`
+1. Copy files in the [**layouts** directory](layouts/) to `LYXDIR/layouts/`
+2. Copy files in the [**examples** directory](examples/) to `LYXDIR/examples/Articles/`
 3. Run LyX
 4. Choose menu **Tools -> Reconfigure**
 
@@ -21,7 +21,7 @@ You will need to acquire writing permission on these directories.
 
 ### Installing to a user directory
 Alternatively,
-1. you can copy files in the **layouts** directory to an arbitrary place as you like and
+1. you can copy files in the [**layouts** directory](layouts/) to an arbitrary place as you like and
 2. specify them from "Local Class" at Document -> Setting -> Document Class.
 
 ## Documentation
