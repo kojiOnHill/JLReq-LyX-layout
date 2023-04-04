@@ -31,5 +31,5 @@ Look at one of example files available in the **examples** directory ([PDF outpu
 [GPL 2.0](https://github.com/kojiOnHill/JLReq-LyX-layout/tree/main/LICENSE).
 
 ## History
-Feb. 7, 2023.  Support for XHTML and DocBook is added.
-Feb. 9, 2023.  Committed to the LyX 2.4.0 source.
+- Feb. 7, 2023.  Support for XHTML and DocBook is added.
+- Feb. 9, 2023.  Committed to the LyX 2.4.0 source.
