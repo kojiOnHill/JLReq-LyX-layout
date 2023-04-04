@@ -7,8 +7,8 @@ These layout files provide document processor [LyX](https://www.lyx.org/) with t
 ## Install
 
 ### Installing to the system directory
-1. Copy files in the [**layouts** directory](layouts/) to `LYXDIR/layouts/`
-2. Copy files in the [**examples** directory](examples/) to `LYXDIR/examples/Articles/`
+1. Copy files in the [**layouts** directory](https://github.com/kojiOnHill/JLReq-LyX-layout/tree/main/layouts/) to `LYXDIR/layouts/`
+2. Copy files in the [**examples** directory](https://github.com/kojiOnHill/JLReq-LyX-layout/tree/main/examples/) to `LYXDIR/examples/Articles/`
 3. Run LyX
 4. Choose menu **Tools -> Reconfigure**
 
@@ -21,11 +21,14 @@ You will need to acquire writing permission on these directories.
 
 ### Installing to a user directory
 Alternatively,
-1. you can copy files in the [**layouts** directory](layouts/) to an arbitrary place as you like and
+1. you can copy files in the [**layouts** directory](https://github.com/kojiOnHill/JLReq-LyX-layout/tree/main/layouts/) to an arbitrary place as you like and
 2. specify them from "Local Class" at Document -> Setting -> Document Class.
 
 ## Documentation
 Look at one of example files available in the **examples** directory ([PDF output](examples/jlreq-article-tate.pdf): see lyx file for its composition), and also the documentation of the *jlreq* LaTeX class itself. Note that the lyx file in the examples directory is readable with LyX versions greater than LyX-2.3.x.
+
+## License
+[GPL 2.0](https://github.com/kojiOnHill/JLReq-LyX-layout/tree/main/LICENSE).
 
 ## History
 Feb. 7, 2023.  Support for XHTML and DocBook is added.
