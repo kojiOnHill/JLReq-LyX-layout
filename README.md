@@ -32,3 +32,4 @@ Look at one of example files available in the **examples** directory ([PDF outpu
 
 ## History
 Feb. 7, 2023.  Support for XHTML and DocBook is added.
+Feb. 9, 2023.  Committed to the LyX 2.4.0 source.
